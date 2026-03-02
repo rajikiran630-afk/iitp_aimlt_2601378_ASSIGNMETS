@@ -1,0 +1,74 @@
+import numpy as np
+import time
+
+# ===============================
+# Task 1: Create an Array and Basic Math
+# ===============================
+
+# Celsius temperatures
+temps_celsius = np.array([22, 25, 28, 24, 26])
+
+# Convert to Fahrenheit
+temps_fahrenheit = temps_celsius * 1.8 + 32
+
+# Average Fahrenheit temperature
+avg_fahrenheit = round(np.mean(temps_fahrenheit), 1)
+
+print("Task 1 Output")
+print("Celsius:", temps_celsius)
+print("Fahrenheit:", temps_fahrenheit)
+print("Average Fahrenheit:", avg_fahrenheit)
+
+
+# ===============================
+# Task 2: Array Shape and Statistics
+# ===============================
+
+scores = np.array([85, 90, 78, 92, 88, 76, 95, 82, 89, 91, 87, 84])
+
+print("\nTask 2 Output")
+print("Shape:", scores.shape)
+print("Total elements:", scores.size)
+
+highest = np.max(scores)
+lowest = np.min(scores)
+score_range = highest - lowest
+
+print("Highest score:", highest)
+print("Lowest score:", lowest)
+print("Range:", score_range)
+
+
+# ===============================
+# Task 3: Performance Comparison
+# ===============================
+
+# NumPy array
+numpy_array = np.arange(1, 50001)
+
+# Python list
+python_list = list(range(1, 50001))
+
+# NumPy timing
+start_numpy = time.time()
+numpy_sum = np.sum(numpy_array)
+end_numpy = time.time()
+
+numpy_time = end_numpy - start_numpy
+
+# Python timing
+start_python = time.time()
+python_sum = sum(python_list)
+end_python = time.time()
+
+python_time = end_python - start_python
+
+# Speed comparison
+speed = python_time / numpy_time
+
+print("\nTask 3 Output")
+print("NumPy sum:", numpy_sum)
+print("Python sum:", python_sum)
+print(f"NumPy time: {numpy_time:.4f} seconds")
+print(f"Python time: {python_time:.4f} seconds")
+print(f"NumPy is {speed:.1f}x faster")
